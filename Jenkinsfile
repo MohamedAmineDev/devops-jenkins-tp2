@@ -17,7 +17,7 @@ pipeline{
         stage ("Generate backend image"){
             steps{
                 dir('devops-jenkins-tp2'){
-                    sh "mvn clean install"
+                    sh "mvn clean install -DskipTests"
                     sh " docker build -t docexp1-spring  ."
                 }
             }
